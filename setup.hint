@@ -1,0 +1,6 @@
+category: Interpreters
+requires: cygwin libguile17
+sdesc: "GNU Scheme interpreter library (CLI and docs)"
+ldesc: "Guile is an interpreter for Scheme, packaged as a library
+that you can link into your applications to give them their
+own scripting language."
