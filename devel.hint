@@ -1,5 +1,5 @@
 category: Interpreters
-requires: cygwin guile crypt libgmp-devel gettext libtool
+requires: guile crypt libgmp-devel gettext libtool
 external-source: guile
 sdesc: "GNU Scheme interpreter library (development)"
 ldesc: "Guile is an interpreter for Scheme, packaged as a library
