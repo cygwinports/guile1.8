@@ -5,12 +5,13 @@ that you can link into your applications to give them their
 own scripting language.
 
 Runtime requirements:
-  cygwin-1.5.25-11
+  cygwin-1.7.5-1
   crypt-1.1-1
-  libgmp3-4.2.2-1
-  libintl8-0.15-1
-  libltdl7-2.2.2-2
-  libreadline6-5.2.12-10
+  libgcc1-4.3.4-3
+  libgmp3-4.3.1-3
+  libintl8-0.17-11
+  libltdl7-2.2.7a-15
+  libreadline7-6.0.3-2
 
 Build requirements:
 (besides corresponding -devel packages)

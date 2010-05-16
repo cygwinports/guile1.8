@@ -1,0 +1,38 @@
+DESCRIPTION="Guile Scheme-language interpreter library"
+HOMEPAGE="http://www.gnu.org/software/guile/guile.html"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz
+         mirror://gnu/${PN}/${P}.tar.gz.sig"
+
+PATCH_URI="
+	1.8.5-export-symbols.patch
+	1.8.5-module-ldflags.patch
+"
+
+# FIXME: libguile-devel
+PKG_NAMES="${PN} lib${PN}17 ${PN}-devel"
+PKG_HINTS="setup lib devel"
+guile_CONTENTS="--exclude=*.dll --exclude=guile-config usr/bin/
+                usr/share/doc/ usr/share/emacs/ usr/share/info/ usr/share/man/"
+libguile17_CONTENTS="usr/bin/cygguile-17.dll usr/lib/*guile-srfi*
+                     usr/lib/*guilereadline* usr/share/guile/"
+guile_devel_CONTENTS="usr/bin/*-config usr/include/ usr/lib/libguile.*
+                      usr/lib/pkgconfig/ usr/share/aclocal/"
+
+DIFF_EXCLUDES="ref test-suite"
+
+CYGCONF_ARGS="
+	--disable-debug-freelist \
+	--disable-debug-malloc \
+	--disable-guile-debug \
+	--disable-error-on-warning \
+	--disable-rpath \
+	--disable-static \
+	--enable-deprecated \
+	--enable-elisp \
+	--enable-networking \
+	--enable-nls \
+	--enable-posix \
+	--enable-regex \
+	--with-threads \
+	--with-modules
+"
