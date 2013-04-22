@@ -1,7 +1,13 @@
-DESCRIPTION="Guile Scheme-language interpreter library"
+NAME="guile"
+VERSION=1.8.8
+RELEASE=1
+CATEGORY="Interpreters"
+SUMMARY="GNU Scheme interpreter library"
+DESCRIPTION="Guile is an interpreter for Scheme, packaged as a library that
+you can link into your applications to give them their own scripting language."
 HOMEPAGE="http://www.gnu.org/software/guile/guile.html"
-SRC_URI="mirror://gnu/${PN}/${P}.tar.gz
-         mirror://gnu/${PN}/${P}.tar.gz.sig"
+SRC_URI="mirror://gnu/guile/${NAME}-${VERSION}.tar.gz
+         mirror://gnu/guile/${NAME}-${VERSION}.tar.gz.sig"
 
 PATCH_URI="
 	1.8.5-export-symbols.patch
@@ -9,10 +15,9 @@ PATCH_URI="
 "
 
 # FIXME: libguile-devel
-PKG_NAMES="${PN} lib${PN}17 ${PN}-devel"
-PKG_HINTS="setup lib devel"
+PKG_NAMES="${NAME} lib${NAME}17 ${NAME}-devel"
 guile_CONTENTS="--exclude=*.dll --exclude=guile-config usr/bin/
-                usr/share/doc/ usr/share/emacs/ usr/share/info/ usr/share/man/"
+                usr/share/doc/ usr/share/info/ usr/share/man/"
 libguile17_CONTENTS="usr/bin/cygguile-17.dll usr/lib/*guile-srfi*
                      usr/lib/*guilereadline* usr/share/guile/"
 guile_devel_CONTENTS="usr/bin/*-config usr/include/ usr/lib/libguile.*
@@ -21,6 +26,7 @@ guile_devel_CONTENTS="usr/bin/*-config usr/include/ usr/lib/libguile.*
 DIFF_EXCLUDES="ref test-suite"
 
 CYGCONF_ARGS="
+	--includedir=/usr/include/guile/1.8
 	--disable-debug-freelist \
 	--disable-debug-malloc \
 	--disable-guile-debug \
@@ -36,3 +42,5 @@ CYGCONF_ARGS="
 	--with-threads \
 	--with-modules
 "
+
+KEEP_LA_FILES="module"
