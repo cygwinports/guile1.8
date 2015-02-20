@@ -43,4 +43,6 @@ CYGCONF_ARGS="
 	--with-modules
 "
 
+if defined ARCH_x86_64; then
 KEEP_LA_FILES="module"
+fi
