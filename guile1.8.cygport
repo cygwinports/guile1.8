@@ -15,7 +15,7 @@ PATCH_URI="
 	1.8.5-module-ldflags.patch
 "
 
-PKG_NAMES="guile1.8 libguile17 libguile-devel"
+PKG_NAMES="guile1.8 libguile17 libguile1.8-devel"
 guile1_8_CONTENTS="
 	usr/bin/guile-1.8.exe
 	usr/bin/guile-tools-1.8
@@ -28,9 +28,8 @@ libguile17_CONTENTS="
 	usr/lib/*guilereadline-v-17*
 	usr/share/guile/1.8/
 "
-libguile_devel_OBSOLETES="guile-devel"
-libguile_devel_REQUIRES=${NAME}
-libguile_devel_CONTENTS="
+libguile1_8_devel_REQUIRES=${NAME}
+libguile1_8_devel_CONTENTS="
 	usr/bin/guile-config-1.8
 	usr/bin/guile-snarf-1.8
 	usr/include/guile/1.8/
